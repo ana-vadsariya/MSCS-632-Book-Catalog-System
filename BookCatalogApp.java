@@ -8,11 +8,14 @@ public class BookCatalogApp {
     }
 
     public boolean removeBook(String title) {
+        //change title to lower case to avoid confusion 
         String bookTitle = title.toLowerCase();
+        //iterate through the whole list to find the book to be removed
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
             if (book.getTitle().toLowerCase().equals(bookTitle)) {
+                //remove the book
                 iterator.remove();
                 return true;
             }
@@ -20,6 +23,7 @@ public class BookCatalogApp {
         return false;
     }
 
+    //search book matching with the title and display it.
     public Book searchBookByTitle(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -29,6 +33,7 @@ public class BookCatalogApp {
         return null;
     }
 
+    //search all books with same author and display
     public void searchBooksByAuthor(String author) {
         boolean found = false;
         for (Book book : books) {
@@ -42,6 +47,7 @@ public class BookCatalogApp {
         }
     }
 
+    //search all books with same genre and display
     public void searchBooksByGenre(String genre) {
         boolean found = false;
         for (Book book : books) {
@@ -55,6 +61,7 @@ public class BookCatalogApp {
         }
     }
 
+    //Display all the books
     public void displayBooks() {
         if (books.isEmpty()) {
             System.out.println("The catalog is empty.");

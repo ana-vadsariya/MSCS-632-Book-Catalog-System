@@ -5,6 +5,7 @@ public class main {
         BookCatalogApp catalog = new BookCatalogApp();
         Scanner scanner = new Scanner(System.in);
 
+        //Main Menu
         while (true) {
             System.out.println("\nWelcome to the Book Catalog App:");
             System.out.println("1. Add Book");
@@ -16,6 +17,7 @@ public class main {
             int option = Integer.parseInt(scanner.nextLine());
 
             switch (option) {
+                //Adding a new book
                 case 1 -> {
                     System.out.print("Enter the title of the Book: ");
                     String title = scanner.nextLine();
@@ -29,6 +31,7 @@ public class main {
                     System.out.println("The book has been added to the catalog.");
                 }
 
+                //Remove a book using the title
                 case 2 -> {
                     System.out.print("Enter the title of the Book you want to remove: ");
                     String title = scanner.nextLine();
@@ -40,6 +43,7 @@ public class main {
                     }
                 }
 
+                //Search Book by different criteria
                 case 3 -> {
                     System.out.println("Search by:");
                     System.out.println("1. Title");
@@ -73,12 +77,13 @@ public class main {
                     }
                 }
 
+                //Display all books
                 case 4 -> {
                     catalog.displayBooks();
                 }
 
                 case 5 -> {
-                    System.out.println("Exiting the Book Catalog App. Goodbye!");
+                    System.out.println("Exiting the Book Catalog App.");
                     return;
                 }
 
